@@ -65,7 +65,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
   }
 }); //hax
 
-['commands', 'aliases'].forEach(x => (client[x] = new Collection()));
+['commands', 'aliases'].forEach(x => (client[x] = new Collection()));//not really
 
 const load = (dir = './commands/') => {
   readdirSync(dir).forEach(dirs => {
@@ -110,7 +110,7 @@ const load = (dir = './commands/') => {
   });
 };
 
-load();
+load();//loads some cmds
 
 client.on('ready', () => {
   const activs = [`on ${client.guilds.cache.size} Servers! | zchelp`, `zchelp`];
@@ -120,14 +120,14 @@ client.on('ready', () => {
       { type: 'PLAYING' }
     );
   }, 20000);
-  console.log(client.user.tag + process.env.REQUIREMODULES)
+  console.log(client.user.tag + process.env.REQUIREMODULES)//status; If one module is missing it will backup or kinda just like it will be assistant;
   throw err(e)
   console.log(client.config.owners)
 });
 
 client.on('message', async message => {
   if (message.author.bot) return;
-  if (message.channel.type === 'dm') return;
+  if (message.channel.type === 'dm') return;//this
 
   let messageFetch = db.fetch(`guildMessages_${message.guild.id}`);
   if (messageFetch === null) return;
