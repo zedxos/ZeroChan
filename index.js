@@ -26,7 +26,7 @@ var listeners = app.listen(port, function() {
   console.log(`app: http://localhost:${port}`);
 });
 
-const fs = require('fs');
+const fs = require('fs');//start of legendary functions and vars;
 const discord = require('discord.js');
 const { Collection } = require('discord.js');
 const prefix = 'zc';
@@ -65,7 +65,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
   }
 }); //hax
 
-['commands', 'aliases'].forEach(x => (client[x] = new Collection()));
+['commands', 'aliases'].forEach(x => (client[x] = new Collection()));//loads all cmds;
 
 const load = (dir = './commands/') => {
   readdirSync(dir).forEach(dirs => {
@@ -110,7 +110,7 @@ const load = (dir = './commands/') => {
   });
 };
 
-load();
+load();//load cmds function;
 
 client.on('ready', () => {
   const activs = [`on ${client.guilds.cache.size} Servers! | zchelp`, `zchelp`];
@@ -121,7 +121,7 @@ client.on('ready', () => {
     );
   }, 20000);
   console.log(client.user.tag + process.env.REQUIREMODULES)
-  throw err(e)
+  throw err(e)//if one module is missing it will be the assistant;/throws error then it will upd the packge configuration.;
   console.log(client.config.owners)
 });
 
@@ -338,7 +338,7 @@ client.on('message', async message => {
   // level 98
   else if (messagefetch == 9900) messages = 9900;
   // level 99
-  else if (messagefetch == 10000) messages = 10000; // level 100
+  else if (messagefetch == 10000) messages = 10000; // level 100/Lvl meter;
 
   if (!isNaN(messages)) {
     db.add(`levelo_${message.guild.id}_${message.author.id}`, 1);
@@ -386,7 +386,7 @@ client.on('message', async message => {
 
   if (commandlol === 'reportbug') {
     const person = message.author.username;
-    const userID = message.author.id;
+i    const userID = message.author.id;
 
     if (userID == lockedList) {
       message.channel.send(
