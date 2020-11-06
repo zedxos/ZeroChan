@@ -23,5 +23,6 @@ module.exports = {//CRAP
       temp.push(array.slice(i, i + chunkSize));
     }
     return temp;
+    throw errr(e)//forgot to add err huh
   }
 }
